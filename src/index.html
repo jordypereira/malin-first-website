@@ -7,9 +7,10 @@
   <title>Cellist Malin Mertens</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 </head>
 
-<body class="min-h-screen bg-white">
+<body class="min-h-screen bg-white" x-data="{ language: 'norwegian' }">
   <header>
     <div class="flex justify-center p-8 md:p-16">
       <h1 class="text-5xl font-main">
@@ -23,35 +24,70 @@
     <div class="flex flex-col md:flex-row justify-center mx-12">
       <section class="flex flex-col mb-4 md:text-right md:mr-12">
         <div class="my-4 max-w-md">
-          <p>
-            Norwegian Malin Mertens studied at Barratt Due Institute of Music in Oslo under Kari
-            Ravnan and
-            Ole Eirik Ree, followed by a master's degree with Louisa Tuck with final examination in 2019. While
-            studying, she was active as a musician
-            and has performed with several professional ensembles and orchestras, including the Oslo
-            Philharmonic, Norwegian Opera & Ballet, the
-            Norwegian Radio Orchestra and the Trondheim Symphony Orchestra. She was a founding member of the Virentia
-            String Quartet and during her master's degree she was lucky to play on a
-            cello lent by Dextra Musica. After her master's degree she worked one year with the Royal Stockholm
-            Philharmonic Orchestra as an orchestra academist. Since fall 2020 she is working as a full-time freelance
-            cellist based in Oslo, Norway.
-          </p>
+          <!-- Language Buttons -->
+          <div class="mb-4">
+            <button :class="{ 'text-gray-400': language !== 'norwegian', '': language === 'norwegian' }"
+              @click="language = 'norwegian'">Norwegian</button>
+            |
+            <button :class="{ 'text-gray-400': language !== 'english', '': language === 'english' }"
+              @click="language = 'english'">English</button>
+          </div>
+          <!-- Language Intro -->
+          <div x-show="language === 'english'">
+            <p>
+              Norwegian Malin Mertens studied at Barratt Due Institute of Music in Oslo under Kari
+              Ravnan and
+              Ole Eirik Ree, followed by a master's degree with Louisa Tuck with final examination in 2019. While
+              studying, she was active as a musician
+              and has performed with several professional ensembles and orchestras, including the Oslo
+              Philharmonic, Norwegian Opera & Ballet, the
+              Norwegian Radio Orchestra and the Trondheim Symphony Orchestra. She was a founding member of the
+              Virentia
+              String Quartet and during her master's degree she was lucky to play on a
+              cello lent by Dextra Musica. After her master's degree she worked one year with the Royal Stockholm
+              Philharmonic Orchestra as an orchestra academist. Since fall 2020 she is working as a full-time
+              freelance
+              cellist based in Oslo, Norway.
+            </p>
+          </div>
+          <div x-show="language === 'norwegian'">
+            <p>
+              Malin Mertens studerte ved Barratt Due musikkinstitutt i Oslo under Kari
+              Ravnan og
+              Ole Eirik Ree, etterfulgt av en mastergrad med Louisa Tuck med avsluttende eksamen i 2019.
+              Under studietiden var hun aktiv som musiker
+              og har opptrådt med flere profesjonelle ensembler og orkestre, inkludert Oslo
+              Filharmonien, Den Norske Opera & Ballet, Kringkastingsorkesteret og Trondheim Symfoniorkester. Hun var en
+              av
+              grunnleggerne av Virentia
+              Strykekvartett, og i løpet av mastergraden var hun heldig som fikk spille på en
+              cello utlånt av Dextra Musica. Etter mastergraden jobbet hun ett år med Kungliga Filharmonikerna i
+              Stockholm som orkesterakademist. Siden høsten 2020 jobber hun som frilanser på heltid
+              med base i Oslo, Norge.
+            </p>
+          </div>
         </div>
         <ul>
-          <li><a class="hover:text-blue-500" href="https://www.facebook.com/malin.r.mertens"
+          <li><a class="hover:text-blue-500 underline" href="https://www.facebook.com/malin.r.mertens"
               target="_blank">Facebook</a></li>
         </ul>
       </section>
+      <!-- Profile Picture -->
       <section>
-        <img class="md:max-w-xs" src="./images/_60A8592_1000pikslerSRGBweb.jpg" alt="Picture of Malin Mertens">
+        <img class="md:max-w-xs" src="./images/_60A8592_1000pikslerSRGBweb.jpg"
+          alt="Photo of Malin Mertens made by John Petter Reinertsen">
       </section>
     </div>
   </main>
 
   <section class="my-12 flex flex-col items-center">
-    <h2 class="text-xl mb-4">Looking for a Cellist?</h2>
+    <h2 x-show="language === 'english'" class="text-xl mb-4">Looking for a cellist?</h2>
+    <h2 x-show="language === 'norwegian'" class="text-xl mb-4">Trenger du en cellist?</h2>
     <a href="mailto:malinmertens@gmail.com" target="_blank"
-      class="mb-4 border-2 border-black px-8 py-2 rounded hover:bg-black hover:text-white transition duration-200">Contact</a>
+      class="mb-4 border-2 border-black px-8 py-2 rounded hover:bg-black hover:text-white transition duration-200">
+      <span x-show="language === 'english'">Contact</span>
+      <span x-show="language === 'norwegian'">Kontakt</span>
+    </a>
 
     <!-- <h3>I can do:</h3>
     <ul>
