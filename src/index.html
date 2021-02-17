@@ -26,10 +26,10 @@
         <div class="my-4 max-w-md">
           <!-- Language Buttons -->
           <div class="mb-4">
-            <button :class="{ 'text-gray-400': language !== 'norwegian', '': language === 'norwegian' }"
+            <button :class="{ 'text-gray-600': language !== 'norwegian', '': language === 'norwegian' }"
               @click="language = 'norwegian'">Norwegian</button>
             |
-            <button :class="{ 'text-gray-400': language !== 'english', '': language === 'english' }"
+            <button :class="{ 'text-gray-600': language !== 'english', '': language === 'english' }"
               @click="language = 'english'">English</button>
           </div>
           <!-- Language Intro -->
@@ -102,15 +102,16 @@
   </section>
 
   <section class="my-12 flex flex-col items-center gap-10">
-    <iframe class="max-w-full"
+    <iframe class="max-w-full" title="Kungliga Filharmonikerna - Orkesterakademin 19/20"
       src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fkungligafilharmonikerna%2Fvideos%2F1733258170131676%2F&show_text=false&width=560"
       width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-    <iframe class="max-w-full"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen="true"></iframe>
+    <iframe class="max-w-full" title="Kungliga Filharmonikernas cellostämma ger oss en hälsning med musik av Bizet."
       src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fkungligafilharmonikerna%2Fvideos%2F524886474882159%2F&show_text=false&width=560"
       width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-    <iframe class="max-w-full" width="560" height="315" src="https://www.youtube.com/embed/RtejALAvZik" frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen="true"></iframe>
+    <iframe class="max-w-full" title="en morgonpromenad - Miquel De Jorge Artells" width="560" height="315"
+      src="https://www.youtube.com/embed/RtejALAvZik" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
     <a href="https://www.konserthuset.se/play/finalkonsert-med-orkesterakademin/" target="_blank">
