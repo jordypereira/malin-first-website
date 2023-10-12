@@ -13,3 +13,14 @@ module.exports = {
   },
   plugins: [],
 }
+module.exports = {
+  // ... other config options
+
+  theme: {
+    extend: {
+      maxWidth: {
+        'xs': '20rem',  // Adjust the value as needed
+      },
+    },
+  },
+};
