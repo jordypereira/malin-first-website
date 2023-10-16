@@ -12,5 +12,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
 
